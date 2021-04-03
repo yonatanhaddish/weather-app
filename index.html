@@ -16,7 +16,7 @@
 
     <main class="row">
 
-        <div class="col-sm-5">
+        <div class="col-sm-3">
             <div>
                 <h2>Search for a City: </h1>
                 <div class="input-group mb-3">
@@ -24,12 +24,14 @@
                     <button class="btn btn-primary" type="button" id="button-search">Search</button>
                 </div>
             </div>
-            <div id="city-history">History lists</div>
+            <div class="history-container">
+                <ul id="history-list" class="history-list"></ul>
+            </div>
         </div>
 
         <div class="col-sm-7" id="current-forecast">
             <div id="city-current">
-                <p class="current-info" id="current-city">current city</p>
+                <p class="current-info" id="current-city">current city <span id="current-time"></span></p>
                 <p class="current-info">Temperature: <span id="current-temp"></span></p>
                 <p class="current-info">Humidity: <span id="current-hum"></span></p>
                 <p class="current-info">Wind Speed: <span id="current-wind-speed"></span></p>
@@ -43,40 +45,40 @@
                             <div class="p-3 border bg-light">
                                 <p>date</p>
                                 <p>icon</p>
-                                <p>temp</p>
-                                <p>Humidity</p>
+                                <p>Temp: <span id="day-one-temp"></span></p>
+                                <p>Humidity: <span id="day-one-hum"></span></p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="p-3 border bg-light">
+                                <p>date</p>
+                                <p id="">icon:</p>
+                                <p>Temp: <span id="day-two-temp"></span></p>
+                                <p>Humidity: <span id="day-two-hum"></span></p>
                             </div>
                         </div>
                         <div class="col">
                             <div class="p-3 border bg-light">
                                 <p>date</p>
                                 <p>icon</p>
-                                <p>temp</p>
-                                <p>Humidity</p>
+                                <p>Temp: <span id="day-three-temp"></span></p>
+                                <p>Humidity: <span id="day-three-hum"></span></p>
                             </div>
                         </div>
                         <div class="col">
                             <div class="p-3 border bg-light">
                                 <p>date</p>
                                 <p>icon</p>
-                                <p>temp</p>
-                                <p>Humidity</p>
+                                <p>Temp: <span id="day-four-temp"></span></p>
+                                <p>Humidity: <span id="day-four-hum"></span></p>
                             </div>
                         </div>
                         <div class="col">
                             <div class="p-3 border bg-light">
                                 <p>date</p>
                                 <p>icon</p>
-                                <p>temp</p>
-                                <p>Humidity</p>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="p-3 border bg-light">
-                                <p>date</p>
-                                <p>icon</p>
-                                <p>temp</p>
-                                <p>Humidity</p>
+                                <p>Temp: <span id="day-five-temp"></span></p>
+                                <p>Humidity: <span id="day-five-hum"></span></p>
                             </div>
                         </div>
                     </div>
@@ -85,6 +87,7 @@
         </div>
 
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets\js\script.js"></script>
 </body>
 </html>
