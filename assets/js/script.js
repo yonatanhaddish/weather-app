@@ -21,6 +21,13 @@ button.addEventListener('click',function() {
     console.log("Error");
     alert("City name NOT FOUND. Insert a valid city name!");
 })
+
+    fetch("https://api.openweathermap.org/data/2.5/forecast?q=" +citySelected.value+ "&units=metric&appid=5bb216c75f6edf82eda28a4bb30b0263").then(function(response) {
+        return response.json();
+    }).then(function(response) {
+        console.log(response);
+    })
+
 });
 
 
