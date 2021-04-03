@@ -10,3 +10,20 @@
     font-size: 50px;
     padding: 20px 0 20px 0;
 }
+#current-forecast {
+    padding: 40px 50px 0 100px;
+}
+#city-current {
+    border: 1px solid black;
+}
+.current-info {
+    padding-left: 20px;
+    font-size: 20px;
+}
+#current-city {
+    font-size: 40px;
+    font-weight: 400;
+}
+#future-forecast {
+    padding-top: 30px;
+}
