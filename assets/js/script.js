@@ -39,7 +39,7 @@ button.addEventListener('click',function(event) {
     currentName.textContent= data.name;
     currentDate.textContent= moment().format("DD/MMM/YYYY");
     currentTemp.textContent= data.main.temp + ' °C';
-    currentHum.textContent= data.main.humidity + ' %';
+    currentHum.textContent= data.main.humidity + '%';
     currentWindSpeed.textContent= Math.round(data.wind.speed*3.6) + ' km/h';
 
     // saving into local storage
