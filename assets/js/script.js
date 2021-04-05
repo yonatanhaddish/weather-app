@@ -28,8 +28,6 @@ var dayFiveTemperature= document.querySelector("#day-five-temp");
 var dayFivehumidity= document.querySelector("#day-five-hum");
 
 
-
-
 button.addEventListener('click',function(event) {
     event.preventDefault();
 
@@ -39,10 +37,17 @@ button.addEventListener('click',function(event) {
 }).then(function(data) {
     console.log(data);
     currentName.textContent= data.name;
-    currentDate.textContent= moment.unix(data.dt);
+    currentDate.textContent= moment().format("DD/MMM/YYYY");
     currentTemp.textContent= data.main.temp + ' °C';
     currentHum.textContent= data.main.humidity + ' %';
     currentWindSpeed.textContent= Math.round(data.wind.speed*3.6) + ' km/h';
+
+    // saving into local storage
+    localStorage.setItem('currentName', currentName.textContent);
+    localStorage.setItem('currentDate', moment().format("DD/MMM/YYYY"));
+    localStorage.setItem('currentTemperature', currentTemp.textContent);
+    localStorage.setItem('currentHumidity', currentHum.textContent);
+    localStorage.setItem('currentWindSpeed', currentWindSpeed.textContent);
 
    
     
@@ -74,24 +79,26 @@ button.addEventListener('click',function(event) {
         dayFiveDate.textContent= moment.unix(response.list[36].dt).format("DD/MMM/YYYY");
         dayFiveTemperature.textContent= response.list[36].main.temp + ' °C';
         dayFiveHumidity.textContent= response.list[36].main.humidity + ' %';
-
-        
+    
     }).catch(function(error) {
         
     })
-    
-    var cityEl= document.createElement("li");
-    // cityEl.classList= ""
-    // cityEl.setAttribute= "history-list";
-
-    
-
-    citySelected.value= "";
-
+}); 
 
    
 
-}); 
+
+document.getElementById("current-city").innerHTML= localStorage.getItem("currentName");
+document.getElementById("current-time").innerHTML= localStorage.getItem("currentDate");
+document.getElementById("current-temp").innerHTML= localStorage.getItem("currentTemperature");
+document.getElementById("current-hum").innerHTML= localStorage.getItem("currentHumidity");
+document.getElementById("current-wind-speed").innerHTML= localStorage.getItem("currentWindSpeed");
+
+
+
+
+
+
  
     
 

@@ -23,7 +23,15 @@
 #current-city {
     font-size: 40px;
     font-weight: 400;
+    display: inline;
 }
 #future-forecast {
     padding-top: 30px;
+}
+#current-time {
+    display: inline;
+    font-size: 40px;
+    font-weight: 400;
+    color: green;
+    padding-left: 50px;
 }
